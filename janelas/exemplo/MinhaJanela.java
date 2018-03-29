@@ -2,6 +2,7 @@ package janela;
 
 import java.awt.Container;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -31,6 +32,7 @@ public class MinhaJanela extends JFrame {
 	JLabel lblEmail = new JLabel ("Email: ");
 	JTextField txtEmail = new JTextField ();
 	
+	JButton button1 = new JButton ("Cadastrar");
 	
 	public MinhaJanela() {
 		super ("Cadastro de Clientes");
@@ -79,8 +81,9 @@ public class MinhaJanela extends JFrame {
 		paine.add(txtEmail);
 		txtEmail.setBounds(100, 230, 200, 25);
 		
-
-				
+		paine.add(button1);
+		button1.setBounds(20,260,200,25);
+		
 		
 		this.setResizable(false);
 		this.setVisible(true);

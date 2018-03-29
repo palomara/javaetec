@@ -2,8 +2,11 @@ package janela;
 
 import java.awt.Container;
 
+import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class MinhaJanela extends JFrame {
@@ -20,7 +23,7 @@ public class MinhaJanela extends JFrame {
 	JTextField txtBairro = new JTextField ();
 	
 	JLabel lblEstado = new JLabel ("Estado: ");
-	JTextField txtEstado = new JTextField();
+	JPanel txtEstado = new JPanel();
 	
 	JLabel lblTelefone = new JLabel ("Telefone: ");
 	JTextField txtTelefone = new JTextField ();
@@ -31,6 +34,11 @@ public class MinhaJanela extends JFrame {
 	JLabel lblEmail = new JLabel ("Email: ");
 	JTextField txtEmail = new JTextField ();
 	
+	JButton button1 = new JButton ("Gravar Cadastro");
+	JButton button2 = new JButton ("Novo Cadastro");
+	JButton button3 = new JButton ("Ver Cadastros");
+	
+	JComboBox cboestado = new JComboBox();
 	
 	public MinhaJanela() {
 		super ("Cadastro de Clientes");
@@ -79,12 +87,23 @@ public class MinhaJanela extends JFrame {
 		paine.add(txtEmail);
 		txtEmail.setBounds(100, 230, 200, 25);
 		
-
+		paine.add(button1);
+		button1.setBounds(20, 270, 130, 40);
+		paine.add(button2);
+		button2.setBounds(160, 270, 130, 40);
+		paine.add(button3);
+		button3.setBounds(300, 270, 130, 40);
 				
+		paine.add(cboestado);
+		cboestado.addItem("SP");
+		cboestado.addItem("RJ");
+		cboestado.addItem("SC");
+		cboestado.addItem("RS");
+		txtEstado.add(cboestado);
 		
 		this.setResizable(false);
 		this.setVisible(true);
-		this.setSize(400,380);
+		this.setSize(480,380);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setTitle("Cadastro de Clientes");
 	}
