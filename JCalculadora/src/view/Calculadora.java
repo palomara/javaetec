@@ -1,6 +1,8 @@
 package view;
 
 import java.awt.Container;
+import java.awt.Font;
+import java.awt.Insets;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -62,6 +64,10 @@ public class Calculadora extends JFrame{
 		//primeira fileira
 		
 		btnMC.setBounds(20,100, 55, 25);
+		//btnMC.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		//btnMC.setMargin(new Insets(1,1,1,1));
+		//btnMC.setBorder(null);
+		//btnMC.setContentAreaFilled(false);
 		paine.add(btnMC);
 		
 		btnMR.setBounds(80, 100, 55, 25);
