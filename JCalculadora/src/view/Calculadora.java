@@ -10,30 +10,40 @@ public class Calculadora extends JFrame{
 	
 	JTextField txtVisor = new JTextField();
 	
+	//primeira fileira
 	JButton btnMC = new JButton("MC");
 	JButton btnMR = new JButton("MR");
 	JButton btnMS = new JButton("MS");
 	JButton btnMais = new JButton("M+");
 	JButton btnMenos = new JButton("M-");
+	//segunda fileira
 	JButton btnSeta = new JButton ("<-");
 	JButton btnCE = new JButton ("CE");
 	JButton btnC = new JButton ("C");
 	JButton btnMaisMenos = new JButton ("+-");
 	JButton btnRaiz = new JButton ("R");
+	//terceira fileira
 	JButton btn7 = new JButton ("7");
 	JButton btn8 = new JButton ("8");
 	JButton btn9 = new JButton ("9");
 	JButton btnDiv = new JButton ("/");
 	JButton btnPercent = new JButton ("%");
+	//quarta fileira
 	JButton btn4 = new JButton ("4");
 	JButton btn5 = new JButton ("5");
 	JButton btn6 = new JButton ("6");
 	JButton btnMult = new JButton ("*");
 	JButton btnFrac = new JButton ("1/x");
+	//quinta fileira
 	JButton btn1 = new JButton ("1");
 	JButton btn2 = new JButton ("2");
 	JButton btn3 = new JButton ("3");
 	JButton btnOMenos = new JButton ("-");
+	JButton btnIgual = new JButton("=");
+	//sexta fileira
+	JButton btn0 = new JButton("0");
+	JButton btnVir = new JButton(",");
+	JButton btnAdi = new JButton("+");
 	
 	
 	
@@ -128,7 +138,18 @@ public class Calculadora extends JFrame{
 		btnOMenos.setBounds(200, 260, 55, 25);
 		paine.add(btnOMenos);
 		
+		btnIgual.setBounds(260, 260, 55, 75);
+		paine.add(btnIgual);
 		
+		//sexta fileira
+		btn0.setBounds(20,300,55,25);
+		paine.add(btn0);
+		
+		btnVir.setBounds(80,300,55,25);;
+		paine.add(btnVir);
+		
+		btnAdi.setBounds(140,300,55,25);
+		paine.add(btnAdi);
 		
 		this.setSize(350, 500); //padrão 220,311
 		this.setVisible(true);
