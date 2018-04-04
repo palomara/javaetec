@@ -138,23 +138,23 @@ public class Calculadora extends JFrame{
 		btnOMenos.setBounds(200, 260, 55, 25);
 		paine.add(btnOMenos);
 		
-		btnIgual.setBounds(260, 260, 55, 75);
+		btnIgual.setBounds(260, 260, 55, 65);
 		paine.add(btnIgual);
 		
 		//sexta fileira
-		btn0.setBounds(20,300,55,25);
+		btn0.setBounds(20,300,115,25);
 		paine.add(btn0);
 		
-		btnVir.setBounds(80,300,55,25);;
+		btnVir.setBounds(140,300,55,25);;
 		paine.add(btnVir);
 		
-		btnAdi.setBounds(140,300,55,25);
+		btnAdi.setBounds(200,300,55,25);
 		paine.add(btnAdi);
 		
-		this.setSize(350, 500); //padrão 220,311
+		this.setSize(350, 380); //padrão 220,311
 		this.setVisible(true);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setResizable(true);
+		this.setResizable(false);
 	}
 	public static void main(String args[]) {
 		Calculadora calc = new Calculadora();
