@@ -1,16 +1,20 @@
 package view;
 
 import java.awt.Container;
+
 import java.awt.Font;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
+import calculo.FuncoesMatematicas;
 
 public class Calculadora extends JFrame{
 	
-	JTextField txtVisor = new JTextField();
+	JTextField txtVisor = new JTextField("0");
 	
 	//primeira fileira
 	JButton btnMC = new JButton("MC");
@@ -47,6 +51,10 @@ public class Calculadora extends JFrame{
 	JButton btnVir = new JButton(",");
 	JButton btnAdi = new JButton("+");
 	
+
+	FuncoesMatematicas mat = new FuncoesMatematicas();
+	String sinal = null;
+	double valor1 = 0, valor2 = 0;
 	
 	
 
@@ -89,8 +97,14 @@ public class Calculadora extends JFrame{
 		btnCE.setBounds(80, 140, 55, 25);
 		paine.add(btnCE);
 		
+		
 		btnC.setBounds(140, 140, 55, 25);
 		paine.add(btnC);
+		btnC.addActionListener(new ActionListener () {
+			public void actionPerformed (ActionEvent e) {
+				txtVisor.setText("0");
+			}
+		});
 		
 		btnMaisMenos.setBounds(200, 140, 55, 25);
 		paine.add(btnMaisMenos);
@@ -102,12 +116,49 @@ public class Calculadora extends JFrame{
 		//terceira fileira
 		btn7.setBounds(20, 180, 55, 25);
 		paine.add(btn7);
+		btn7.addActionListener(new ActionListener () {
+			public void actionPerformed(ActionEvent e) {
+				//System.out.println("7");
+				
+				if (txtVisor.getText().equals("0")) {
+					
+				   txtVisor.setText("7");
+				}
+			
+			else {
+				txtVisor.setText(txtVisor.getText() + "7");
+			}
+		}
+	});
+		
 		
 		btn8.setBounds(80, 180, 55, 25);
 		paine.add(btn8);
+		btn8.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+				if (txtVisor.getText().equals("0")) {
+					txtVisor.setText("8");
+				}
+				else {
+					txtVisor.setText(txtVisor.getText() + "8");
+				}
+			}
+		});
 		
 		btn9.setBounds(140, 180, 55, 25);
 		paine.add(btn9);
+		btn9.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (txtVisor.getText().equals("0")) {
+					txtVisor.setText("9");
+				}
+					else {
+						txtVisor.setText(txtVisor.getText() + "9");
+					}
+				
+			}
+		});
 		
 		btnDiv.setBounds(200, 180, 55, 25);
 		paine.add(btnDiv);
@@ -118,12 +169,45 @@ public class Calculadora extends JFrame{
 		//quarta fileira
 		btn4.setBounds(20, 220, 55, 25);
 		paine.add(btn4);
+		btn4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (txtVisor.getText().equals("0")) {
+					txtVisor.setText("4");
+				}
+					else {
+						txtVisor.setText(txtVisor.getText() + "4");
+					}
+				
+			}
+		});
 		
 		btn5.setBounds(80, 220, 55, 25);
 		paine.add(btn5);
+		btn5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (txtVisor.getText().equals("0")) {
+					txtVisor.setText("5");
+				}
+					else {
+						txtVisor.setText(txtVisor.getText() + "5");
+					}
+				
+			}
+		});
 		
 		btn6.setBounds(140, 220, 55, 25);
 		paine.add(btn6);
+		btn6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (txtVisor.getText().equals("0")) {
+					txtVisor.setText("6");
+				}
+					else {
+						txtVisor.setText(txtVisor.getText() + "6");
+					}
+				
+			}
+		});
 		
 		btnMult.setBounds(200, 220, 55, 25);
 		paine.add(btnMult);
@@ -134,9 +218,31 @@ public class Calculadora extends JFrame{
 		//quinta fileira
 		btn1.setBounds(20, 260, 55, 25);
 		paine.add(btn1);
+		btn1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (txtVisor.getText().equals("0")) {
+					txtVisor.setText("1");
+				}
+					else {
+						txtVisor.setText(txtVisor.getText() + "1");
+					}
+				
+			}
+		});
 		
 		btn2.setBounds(80, 260, 55, 25);
 		paine.add(btn2);
+		btn2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (txtVisor.getText().equals("0")) {
+					txtVisor.setText("2");
+				}
+					else {
+						txtVisor.setText(txtVisor.getText() + "2");
+					}
+				
+			}
+		});
 		
 		btn3.setBounds(140, 260, 55, 25);
 		paine.add(btn3);
@@ -146,6 +252,16 @@ public class Calculadora extends JFrame{
 		
 		btnIgual.setBounds(260, 260, 55, 65);
 		paine.add(btnIgual);
+		btnfIgual.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				valor2 = Double.parseDouble(visor.getText());
+
+				if(sinal.equals("soma")) {
+					txtVisor.setText(mat.soma(valor1, valor2) + "");
+				}
+				
+			}
+		});
 		
 		//sexta fileira
 		btn0.setBounds(20,300,115,25);
