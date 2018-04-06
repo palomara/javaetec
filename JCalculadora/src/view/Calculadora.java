@@ -22,11 +22,11 @@ public class Calculadora extends JFrame{
 	ButtonGroup tipo = new ButtonGroup ();
 	
 	JMenu Exibir = new JMenu("Exibir");
-	JRadioButtonMenuItem radipadrao = new JRadioButtonMenuItem("Padão");
-	JRadioButtonMenuItem radicienti = new JRadioButtonMenuItem("Cientifica");
+	JRadioButtonMenuItem radipadrao = new JRadioButtonMenuItem("Padrão");
+	JRadioButtonMenuItem radicienti = new JRadioButtonMenuItem("Científica");
 	JRadioButtonMenuItem radiprograma = new JRadioButtonMenuItem("Programador");
-	JRadioButtonMenuItem radiestatist = new JRadioButtonMenuItem("Estatistica");
-	JCheckBoxMenuItem cbAgrupamento = new JCheckBoxMenuItem ("Agrupamento de Digitos");
+	JRadioButtonMenuItem radiestatist = new JRadioButtonMenuItem("Estatística");
+	JCheckBoxMenuItem cbAgrupamento = new JCheckBoxMenuItem ("Agrupamento de dígitos");
 	
 	
 	JMenu Editar = new JMenu("Editar");
@@ -325,7 +325,7 @@ public class Calculadora extends JFrame{
 				if(sinal.equals("subtracao")) {
 					txtVisor.setText(mat.subtracao(valor1, valor2) + "");
 				}
-				System.out.println(sinal);
+				//System.out.println(sinal);
 				if(sinal.equals("multiplicacao")) {
 					txtVisor.setText(mat.multiplicacao(valor1, valor2) + "");
 				}
@@ -339,6 +339,17 @@ public class Calculadora extends JFrame{
 		//sexta fileira
 		btn0.setBounds(20,300,115,25);
 		paine.add(btn0);
+		btn0.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (txtVisor.getText().equals("0")) {
+					txtVisor.setText("0");
+				}
+					else {
+						txtVisor.setText(txtVisor.getText() + "0");
+					}
+				
+			}
+		});
 		
 		btnVir.setBounds(140,300,55,25);;
 		paine.add(btnVir);
