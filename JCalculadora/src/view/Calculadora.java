@@ -249,12 +249,23 @@ public class Calculadora extends JFrame{
 		
 		btnOMenos.setBounds(200, 260, 55, 25);
 		paine.add(btnOMenos);
+		btnOMenos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				valor2 = Double.parseDouble(txtVisor.getText());
+
+				if(sinal.equals("subtracao")) {
+					txtVisor.setText(mat.subtracao(valor1, valor2) + "");
+				}
+				
+			}
+		});
+		
 		
 		btnIgual.setBounds(260, 260, 55, 65);
 		paine.add(btnIgual);
-		btnfIgual.addActionListener(new ActionListener() {
+		btnIgual.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				valor2 = Double.parseDouble(visor.getText());
+				valor2 = Double.parseDouble(txtVisor.getText());
 
 				if(sinal.equals("soma")) {
 					txtVisor.setText(mat.soma(valor1, valor2) + "");
