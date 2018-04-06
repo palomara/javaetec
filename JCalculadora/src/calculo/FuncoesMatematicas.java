@@ -1,8 +1,7 @@
 package calculo;
 
-import view.Calculadora;
 
-public class FuncoesMatematicas extends Calculadora {
+public class FuncoesMatematicas {
 	
 	public double soma (double a, double b) {
 		double total = a + b;
