@@ -131,9 +131,25 @@ public class Calculadora extends JFrame{
 		
 		btnMaisMenos.setBounds(200, 140, 55, 25);
 		paine.add(btnMaisMenos);
+		btnMaisMenos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				valor1 = Double.parseDouble(txtVisor.getText());
+				sinal = "maismenos";
+				txtVisor.setText("0");
+				
+			}
+		});
 		
 		btnRaiz.setBounds(260, 140, 55, 25);
 		paine.add(btnRaiz);
+		btnRaiz.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				valor1 = Double.parseDouble(txtVisor.getText());
+				sinal = "raiz";
+				txtVisor.setText("0");
+				
+			}
+		});
 		
 		
 		//terceira fileira
@@ -255,6 +271,16 @@ public class Calculadora extends JFrame{
 		
 		btnFrac.setBounds(260, 220, 55, 25);
 		paine.add(btnFrac);
+		btnFrac.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				valor1 = Double.parseDouble(txtVisor.getText());
+				sinal = "fracao";
+				txtVisor.setText("0");
+				
+			}
+		});
+		
+		
 		
 		//quinta fileira
 		btn1.setBounds(20, 260, 55, 25);
@@ -331,6 +357,15 @@ public class Calculadora extends JFrame{
 				}
 				if(sinal.equals("divisao")) {
 					txtVisor.setText(mat.divisao(valor1, valor2) + "");
+				}
+				if(sinal.equals("maismenos")) {
+					txtVisor.setText(mat.maismenos(valor1, valor2) + "");
+				}
+				if(sinal.equals("raiz")) {
+					txtVisor.setText(mat.raiz(valor1) + "");
+				}
+				if(sinal.equals("fracao")) {
+					txtVisor.setText(mat.fracao(valor1) + "");
 				}
 				
 			}

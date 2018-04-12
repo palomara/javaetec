@@ -22,5 +22,17 @@ public class FuncoesMatematicas {
 			double total = g / h;
 			return total;
 		}
+		public double maismenos(double i, double j){
+			double total = i = - j ;
+			return total;
+		}
+		public double raiz(double k) {
+			double total = Math.sqrt(k);
+			return total;
+		}
+		public double fracao (double m) {
+			double total = 1/m;
+			return total;
+		}
 	}
 	
