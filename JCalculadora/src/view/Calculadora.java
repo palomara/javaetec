@@ -21,6 +21,7 @@ public class Calculadora extends JFrame{
 	
 	ButtonGroup tipo = new ButtonGroup ();
 	
+	//parte superior
 	JMenu Exibir = new JMenu("Exibir");
 	JRadioButtonMenuItem radipadrao = new JRadioButtonMenuItem("Padrão");
 	JRadioButtonMenuItem radicienti = new JRadioButtonMenuItem("Científica");
@@ -86,42 +87,82 @@ public class Calculadora extends JFrame{
 		Container paine = this.getContentPane();
 		paine.setLayout(null);
 		
-
+		//barra de menu superior
+		menuBar.setBounds(0, 0, 228, 25);
+		paine.add(menuBar);
 		
-		txtVisor.setBounds(20, 20, 300, 60);
+		Exibir.setFont( new Font( "Arial", Font.PLAIN, 12 ));
+		Exibir.setBounds(1, 5, 45, 20);
+		menuBar.add(Exibir);
+		Exibir.add(radipadrao);
+		Exibir.add(radicienti);
+		Exibir.add(radiprograma);
+		Exibir.add(radiestatist);
+		Exibir.addSeparator();
+		Exibir.add("Histórico       Crtl + H");
+		Exibir.add(cbAgrupamento);
+		Exibir.addSeparator();
+		
+		Editar.setFont( new Font( "Arial", Font.PLAIN, 12 ));
+		Editar.setBounds(46, 5, 45, 20);
+		menuBar.add(Editar);
+		
+		Ajuda.setFont( new Font( "Arial", Font.PLAIN, 12 ));
+		Ajuda.setBounds(91, 5, 45, 20);
+		menuBar.add(Ajuda);
+		
+		//visor
+		txtVisor.setBounds(20, 40, 171, 50);
+		txtVisor.setFont( new Font( "Arial", Font.PLAIN, 20 ));	
 		paine.add(txtVisor);
-		
-		
+				
 		//primeira fileira
 		
-		btnMC.setBounds(20,100, 55, 25);
-		//btnMC.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
-		//btnMC.setMargin(new Insets(1,1,1,1));
-		//btnMC.setBorder(null);
-		//btnMC.setContentAreaFilled(false);
+		btnMC.setBounds(20, 95, 30,25);
+		btnMC.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnMC.setMargin(new Insets(1,1,1,1));
 		paine.add(btnMC);
+		btnMC.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+					txtVisor.setText("0");				
+			}
+		});
 		
-		btnMR.setBounds(80, 100, 55, 25);
+		btnMR.setBounds(55, 95, 30, 25);
+		btnMR.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnMR.setMargin(new Insets (1,1,1,1));
 		paine.add(btnMR);
 		
-		btnMS.setBounds(140, 100, 55, 25);
+		btnMS.setBounds(90, 95, 30, 25);
+		btnMS.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnMS.setMargin(new Insets(1,1,1,1));
 		paine.add(btnMS);
 		
-		btnMais.setBounds(200,100, 55, 25);
+		btnMais.setBounds(125, 95, 30, 25);
+		btnMais.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnMais.setMargin(new Insets(1,1,1,1));
 		paine.add(btnMais);		
 		
-		btnMenos.setBounds(260, 100, 55, 25);
+		btnMenos.setBounds(160, 95, 30, 25);
+		btnMenos.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnMenos.setMargin(new Insets(1,1,1,1));
 		paine.add(btnMenos);
 		
 		//segunda fileira
-		btnSeta.setBounds(20, 140, 55, 25);
+		btnSeta.setBounds(20, 125, 30, 25);
+		btnSeta.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnSeta.setMargin(new Insets(1,1,1,1));
 		paine.add(btnSeta);
 		
-		btnCE.setBounds(80, 140, 55, 25);
+		btnCE.setBounds(55, 125, 30, 25);
+		btnCE.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnCE.setMargin(new Insets(1,1,1,1));
 		paine.add(btnCE);
 		
 		
-		btnC.setBounds(140, 140, 55, 25);
+		btnC.setBounds(90, 125, 30, 25);
+		btnC.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnC.setMargin(new Insets(1,1,1,1));
 		paine.add(btnC);
 		btnC.addActionListener(new ActionListener () {
 			public void actionPerformed (ActionEvent e) {
@@ -129,7 +170,9 @@ public class Calculadora extends JFrame{
 			}
 		});
 		
-		btnMaisMenos.setBounds(200, 140, 55, 25);
+		btnMaisMenos.setBounds(125, 125, 30, 25);
+		btnMaisMenos.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnMaisMenos.setMargin(new Insets(1,1,1,1));
 		paine.add(btnMaisMenos);
 		btnMaisMenos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -140,7 +183,9 @@ public class Calculadora extends JFrame{
 			}
 		});
 		
-		btnRaiz.setBounds(260, 140, 55, 25);
+		btnRaiz.setBounds(160, 125, 30, 25);
+		btnRaiz.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnRaiz.setMargin(new Insets(1,1,1,1));
 		paine.add(btnRaiz);
 		btnRaiz.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -153,7 +198,9 @@ public class Calculadora extends JFrame{
 		
 		
 		//terceira fileira
-		btn7.setBounds(20, 180, 55, 25);
+		btn7.setBounds(20, 155, 30, 25);
+		btn7.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btn7.setMargin(new Insets(1,1,1,1));
 		paine.add(btn7);
 		btn7.addActionListener(new ActionListener () {
 			public void actionPerformed(ActionEvent e) {
@@ -171,7 +218,9 @@ public class Calculadora extends JFrame{
 	});
 		
 		
-		btn8.setBounds(80, 180, 55, 25);
+		btn8.setBounds(55, 155, 30, 25);
+		btn8.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btn8.setMargin(new Insets(1,1,1,1));
 		paine.add(btn8);
 		btn8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -185,7 +234,9 @@ public class Calculadora extends JFrame{
 			}
 		});
 		
-		btn9.setBounds(140, 180, 55, 25);
+		btn9.setBounds(90, 155, 30, 25);
+		btn9.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btn9.setMargin(new Insets(1,1,1,1));
 		paine.add(btn9);
 		btn9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -199,7 +250,9 @@ public class Calculadora extends JFrame{
 			}
 		});
 		
-		btnDiv.setBounds(200, 180, 55, 25);
+		btnDiv.setBounds(125, 155, 30, 25);
+		btnDiv.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnDiv.setMargin(new Insets(1,1,1,1));
 		paine.add(btnDiv);
 		btnDiv.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -211,11 +264,23 @@ public class Calculadora extends JFrame{
 		});
 		
 		
-		btnPercent.setBounds(260, 180, 55, 25);
+		btnPercent.setBounds(160, 155, 30, 25);
+		btnPercent.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnPercent.setMargin(new Insets(1,1,1,1));
 		paine.add(btnPercent);
+		btnPercent.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				valor1 = Double.parseDouble(txtVisor.getText());		
+				sinal = "porcentagem";
+				txtVisor.setText("0");
+				
+			}
+		});	
 		
 		//quarta fileira
-		btn4.setBounds(20, 220, 55, 25);
+		btn4.setBounds(20, 185, 30, 25);
+		btn4.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btn4.setMargin(new Insets(1,1,1,1));
 		paine.add(btn4);
 		btn4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -229,7 +294,9 @@ public class Calculadora extends JFrame{
 			}
 		});
 		
-		btn5.setBounds(80, 220, 55, 25);
+		btn5.setBounds(55, 185, 30, 25);
+		btn5.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btn5.setMargin(new Insets(1,1,1,1));
 		paine.add(btn5);
 		btn5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -243,7 +310,9 @@ public class Calculadora extends JFrame{
 			}
 		});
 		
-		btn6.setBounds(140, 220, 55, 25);
+		btn6.setBounds(90, 185, 30, 25);
+		btn6.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btn6.setMargin(new Insets(1,1,1,1));
 		paine.add(btn6);
 		btn6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -257,7 +326,9 @@ public class Calculadora extends JFrame{
 			}
 		});
 		
-		btnMult.setBounds(200, 220, 55, 25);
+		btnMult.setBounds(125, 185, 30, 25);
+		btnMult.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnMult.setMargin(new Insets(1,1,1,1));
 		paine.add(btnMult);
 		btnMult.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -269,7 +340,9 @@ public class Calculadora extends JFrame{
 		});
 		
 		
-		btnFrac.setBounds(260, 220, 55, 25);
+		btnFrac.setBounds(160, 185, 30, 25);
+		btnFrac.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnFrac.setMargin(new Insets(1,1,1,1));
 		paine.add(btnFrac);
 		btnFrac.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -283,7 +356,9 @@ public class Calculadora extends JFrame{
 		
 		
 		//quinta fileira
-		btn1.setBounds(20, 260, 55, 25);
+		btn1.setBounds(20, 215, 30, 25);
+		btn1.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btn1.setMargin(new Insets(1,1,1,1));
 		paine.add(btn1);
 		btn1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -297,7 +372,9 @@ public class Calculadora extends JFrame{
 			}
 		});
 		
-		btn2.setBounds(80, 260, 55, 25);
+		btn2.setBounds(55, 215, 30, 25);
+		btn2.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btn2.setMargin(new Insets(1,1,1,1));
 		paine.add(btn2);
 		btn2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -311,7 +388,9 @@ public class Calculadora extends JFrame{
 			}
 		});
 		
-		btn3.setBounds(140, 260, 55, 25);
+		btn3.setBounds(90, 215, 30, 25);
+		btn3.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btn3.setMargin(new Insets(1,1,1,1));
 		paine.add(btn3);
 		btn3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -325,7 +404,9 @@ public class Calculadora extends JFrame{
 			}
 		});
 		
-		btnOMenos.setBounds(200, 260, 55, 25);
+		btnOMenos.setBounds(125, 215, 30, 25);
+		btnOMenos.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnOMenos.setMargin(new Insets(1,1,1,1));
 		paine.add(btnOMenos);
 		btnOMenos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -338,7 +419,9 @@ public class Calculadora extends JFrame{
 		});
 		
 		
-		btnIgual.setBounds(260, 260, 55, 65);
+		btnIgual.setBounds(160, 215, 30, 55);
+		btnIgual.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnIgual.setMargin(new Insets(1,1,1,1));
 		paine.add(btnIgual);
 		btnIgual.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -367,12 +450,17 @@ public class Calculadora extends JFrame{
 				if(sinal.equals("fracao")) {
 					txtVisor.setText(mat.fracao(valor1) + "");
 				}
+				if(sinal.equals("porcentagem")) {
+					txtVisor.setText(mat.porcentagem(valor1, valor2) + "");	
+				}
 				
 			}
 		});
 		
 		//sexta fileira
-		btn0.setBounds(20,300,115,25);
+		btn0.setBounds(20, 245, 65, 25);
+		btn0.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btn0.setMargin(new Insets(1,1,1,1));
 		paine.add(btn0);
 		btn0.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -386,10 +474,14 @@ public class Calculadora extends JFrame{
 			}
 		});
 		
-		btnVir.setBounds(140,300,55,25);;
+		btnVir.setBounds(90, 245, 30, 25);
+		btnVir.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnVir.setMargin(new Insets(1,1,1,1));
 		paine.add(btnVir);
 		
-		btnAdi.setBounds(200,300,55,25);
+		btnAdi.setBounds(125, 245, 30, 25);
+		btnAdi.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnAdi.setMargin(new Insets(1,1,1,1));
 		paine.add(btnAdi);
 		btnAdi.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -401,7 +493,7 @@ public class Calculadora extends JFrame{
 		});
 		
 		
-		this.setSize(350, 380); //padrão 220,311
+		this.setSize(228, 322); //padrão 220,311
 		this.setVisible(true);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(false);

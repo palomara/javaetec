@@ -34,5 +34,10 @@ public class FuncoesMatematicas {
 			double total = 1/m;
 			return total;
 		}
-	}
-	
+		public double porcentagem(double a, double b) {
+			b =  a * (b/100)  ;
+			return b;
+			
+		}
+		
+}
