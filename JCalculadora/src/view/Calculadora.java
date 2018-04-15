@@ -1,5 +1,6 @@
 package view;
 
+import java.awt.BorderLayout;
 import java.awt.Container;
 
 import java.awt.Font;
@@ -11,6 +12,7 @@ import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JRadioButtonMenuItem;
@@ -87,6 +89,7 @@ public class Calculadora extends JFrame{
 		Container paine = this.getContentPane();
 		paine.setLayout(null);
 		
+		
 		//barra de menu superior
 		menuBar.setBounds(0, 0, 228, 25);
 		paine.add(menuBar);
@@ -114,6 +117,7 @@ public class Calculadora extends JFrame{
 		//visor
 		txtVisor.setBounds(20, 40, 171, 50);
 		txtVisor.setFont( new Font( "Arial", Font.PLAIN, 20 ));	
+		txtVisor.setHorizontalAlignment(JLabel.RIGHT);
 		paine.add(txtVisor);
 				
 		//primeira fileira
