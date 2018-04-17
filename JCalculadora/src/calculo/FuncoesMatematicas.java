@@ -23,7 +23,7 @@ public class FuncoesMatematicas {
 			return total;
 		}
 		public double maismenos(double i, double j){
-			double total = i = - j ;
+			double total = i *= (-1);
 			return total;
 		}
 		public double raiz(double k) {
